@@ -53,7 +53,7 @@ public class MainClass {
         Thread thread2 = new Thread(new Runnable() {
             @Override
             public synchronized void run() {
-                for (int i = 0; i < secondArray.length; i++) {
+                for (int i = firstArray.length; i < secondArray.length; i++) {
                     secondArray[i] = (int)(secondArray[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
                 }
             }
