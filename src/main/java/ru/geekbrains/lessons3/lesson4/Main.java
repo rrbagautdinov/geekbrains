@@ -27,13 +27,13 @@ public class Main {
     public void printA() {
         synchronized (mon) {
             try {
-                for (int i = 0; i < 2; i++) {
+                for (int i = 0; i < 1; i++) {
                     while (currentLetter != 'A') {
                         mon.wait();
                     }
                     System.out.print("A");
                     currentLetter = 'B';
-                    mon.notify();
+                    mon.notifyAll();
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -44,13 +44,13 @@ public class Main {
     public void printB() {
         synchronized (mon) {
             try {
-                for (int i = 0; i < 2; i++) {
+                for (int i = 0; i < 1; i++) {
                     while (currentLetter != 'B') {
                         mon.wait();
                     }
                     System.out.print("B");
                     currentLetter = 'C';
-                    mon.notify();
+                    mon.notifyAll();
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -61,13 +61,13 @@ public class Main {
     public void printC() {
         synchronized (mon) {
             try {
-                for (int i = 0; i < 2; i++) {
+                for (int i = 0; i < 1; i++) {
                     while (currentLetter != 'C') {
                         mon.wait();
                     }
                     System.out.print("C");
                     currentLetter = 'A';
-                    mon.notify();
+                    mon.notifyAll();
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
