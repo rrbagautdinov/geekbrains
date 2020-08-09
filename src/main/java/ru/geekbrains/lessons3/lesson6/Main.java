@@ -4,11 +4,11 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        //task1(new int[]{1, 4, 3, 2, 4, 6, 4, 8, 9, 10});
+        task1(new int[]{1, 4, 3, 2, 4, 6, 4, 8, 9, 10});
         task2(new int[]{1, 4, 1, 4, 1, 4});
     }
 
-    public static void task1(int[] massive) {
+    public static int[] task1(int[] massive) {
         int findFour = 0;
         int lastFour = 0;
         for (int i = 0; i < massive.length; i++) {
@@ -31,9 +31,7 @@ public class Main {
         System.out.println("Индекс последней четверки: " + lastFour);
         System.out.println("Вытаскиваю остаточный массив, после последней четверки");
         int massive2[] = Arrays.copyOfRange(massive, lastFour + 1, massive.length);
-        for (int i = 0; i < massive2.length; i++) {
-            System.out.print(massive2[i] + " ");
-        }
+        return massive2;
     }
 
     public static boolean task2(int[] massiv) {
