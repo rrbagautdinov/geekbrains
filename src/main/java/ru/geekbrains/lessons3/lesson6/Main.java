@@ -16,8 +16,9 @@ public class Main {
                 findFour++;
             }
         }
+
         if (findFour == 0) {
-            throw new RuntimeException();
+            throw new RuntimeException("Нет четверок");
         }
 
         for (int i = massive.length - 1; i >= 0; i--) {
